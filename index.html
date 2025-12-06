@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Added Font Awesome for the Modal Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -52,6 +54,7 @@
             -webkit-font-smoothing: antialiased;
         }
         
+        /* Language System */
         body[data-lang="en"] .lang-zh { display: none !important; }
         body[data-lang="zh"] .lang-en { display: none !important; }
 
@@ -76,10 +79,147 @@
         .img-zoom-container { overflow: hidden; }
         .img-zoom-container img { transition: transform 0.7s ease; }
         .group:hover .img-zoom-container img { transform: scale(1.05); }
+
+        /* --- Modal Styles from Token2.html --- */
+        .compliance-overlay {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+        }
+
+        .custom-checkbox {
+            appearance: none;
+            background-color: #fff;
+            margin: 0;
+            font: inherit;
+            color: currentColor;
+            width: 1.15em;
+            height: 1.15em;
+            border: 1px solid currentColor;
+            border-radius: 0.15em;
+            display: grid;
+            place-content: center;
+            cursor: pointer;
+        }
+
+        .custom-checkbox::before {
+            content: "";
+            width: 0.65em;
+            height: 0.65em;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em #1a1a1a;
+            background-color: #1a1a1a;
+            transform-origin: center;
+            clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+        }
+
+        .custom-checkbox:checked::before {
+            transform: scale(1);
+        }
     </style>
 </head>
 
-<body data-lang="en" class="bg-white text-black selection:bg-black selection:text-white">
+<!-- Added id="mainBody" and overflow-hidden for modal handling -->
+<body id="mainBody" data-lang="en" class="bg-white text-black selection:bg-black selection:text-white overflow-hidden">
+
+    <!-- Compliance Modal (Integrated from token2.html) -->
+    <div id="complianceModal" class="fixed inset-0 z-[100] compliance-overlay flex items-center justify-center p-4">
+        <div class="bg-white border border-black shadow-2xl rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto flex flex-col relative">
+            
+            <!-- Language Toggle in Modal -->
+            <div class="absolute top-6 right-6 z-10">
+                <button onclick="toggleLanguage()" class="text-xs font-mono border border-gray-200 px-3 py-1.5 rounded-full hover:bg-black hover:text-white transition-all uppercase flex items-center gap-2">
+                    <i class="fas fa-globe"></i>
+                    <!-- Updated to match Nav logic: Show target language -->
+                    <span class="lang-en">繁中</span><span class="lang-zh">EN</span>
+                </button>
+            </div>
+
+            <div class="p-8 md:p-10">
+                <div class="text-center mb-8">
+                    <div class="inline-block p-3 rounded-full bg-black text-white mb-4 text-xl">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-2">
+                        <span class="lang-zh">重要聲明</span>
+                        <span class="lang-en">Important Disclaimer</span>
+                    </h2>
+                    <div class="h-1 w-16 bg-black mx-auto"></div>
+                </div>
+
+                <div class="text-sm text-gray-600 mb-8 leading-relaxed text-center space-y-2">
+                    <p>
+                        <span class="lang-zh">您即將進入 HKAIIFF 數字資產服務區域。</span>
+                        <span class="lang-en">You are about to enter the HKAIIFF Digital Asset Service Area.</span>
+                    </p>
+                    <p class="font-medium text-black">
+                        <span class="lang-zh">本服務由香港主體提供，受香港法律管轄。</span>
+                        <span class="lang-en">This service is provided by a Hong Kong entity and is subject to Hong Kong laws.</span>
+                    </p>
+                </div>
+
+                <div class="space-y-4 mb-8">
+                    <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">
+                        <span class="lang-zh">請確認：</span>
+                        <span class="lang-en">Please Confirm:</span>
+                    </p>
+                    
+                    <label class="flex items-start gap-3 cursor-pointer group">
+                        <input type="checkbox" class="custom-checkbox mt-0.5 compliance-check">
+                        <span class="text-sm group-hover:text-black text-gray-600 transition-colors">
+                            <span class="lang-zh">本人非中國大陸居民</span>
+                            <span class="lang-en">I am not a resident of Mainland China</span>
+                        </span>
+                    </label>
+
+                    <label class="flex items-start gap-3 cursor-pointer group">
+                        <input type="checkbox" class="custom-checkbox mt-0.5 compliance-check">
+                        <span class="text-sm group-hover:text-black text-gray-600 transition-colors">
+                            <span class="lang-zh">本人非美國公民或居民</span>
+                            <span class="lang-en">I am not a U.S. citizen or resident</span>
+                        </span>
+                    </label>
+
+                    <label class="flex items-start gap-3 cursor-pointer group">
+                        <input type="checkbox" class="custom-checkbox mt-0.5 compliance-check">
+                        <span class="text-sm group-hover:text-black text-gray-600 transition-colors">
+                            <span class="lang-zh">本人通過自有境外資產參與</span>
+                            <span class="lang-en">I am participating using my own offshore assets</span>
+                        </span>
+                    </label>
+
+                    <label class="flex items-start gap-3 cursor-pointer group">
+                        <input type="checkbox" class="custom-checkbox mt-0.5 compliance-check">
+                        <span class="text-sm group-hover:text-black text-gray-600 transition-colors">
+                            <span class="lang-zh">本人知悉數字資產投資風險</span>
+                            <span class="lang-en">I am aware of the risks involved in digital asset investment</span>
+                        </span>
+                    </label>
+
+                    <label class="flex items-start gap-3 cursor-pointer group">
+                        <input type="checkbox" class="custom-checkbox mt-0.5 compliance-check">
+                        <span class="text-sm group-hover:text-black text-gray-600 transition-colors">
+                            <span class="lang-zh">本人自願承擔全部投資風險</span>
+                            <span class="lang-en">I voluntarily assume all investment risks</span>
+                        </span>
+                    </label>
+                </div>
+
+                <div class="space-y-4">
+                    <button id="complianceBtn" disabled onclick="acceptCompliance()" class="w-full bg-black text-white py-4 rounded-xl font-bold text-sm tracking-wide disabled:opacity-30 disabled:cursor-not-allowed hover:bg-gray-900 transition-all transform hover:-translate-y-1">
+                        <span class="lang-zh">確認並進入</span>
+                        <span class="lang-en">Confirm & Enter</span>
+                    </button>
+                    
+                    <p class="text-[10px] text-center text-gray-400">
+                        <span class="lang-zh">我已閱讀並同意《用戶協議》《風險提示書》</span>
+                        <span class="lang-en">I have read and agree to the "User Agreement" and "Risk Disclosure Statement"</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Compliance Modal -->
 
     <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 transition-all duration-300">
         <div class="px-6 md:px-8 py-4 flex justify-between items-center max-w-[1920px] mx-auto">
@@ -641,10 +781,6 @@
                         <li><span class="lang-en">• DRC-NFT - Film Distribution Rights Contract</span><span class="lang-zh">• DRC-NFT - 影視發行權合約</span></li>
                         <li><span class="lang-en">• RPL-NFT - Academy Cooperation License</span><span class="lang-zh">• RPL-NFT - 學院合作許可證</span></li>
                     </ul>
-                    <div class="mt-4 p-3 bg-blue-50 rounded">
-                        <div class="text-sm font-bold text-blue-600"><span class="lang-en">Risk-Return Characteristics</span><span class="lang-zh">風險收益特徵</span></div>
-                        <div class="text-xs text-gray-600"><span class="lang-en">Conservative • Annualized 8-15%</span><span class="lang-zh">穩健型 • 年化8-15%</span></div>
-                    </div>
                 </div>
             </div>
 
@@ -668,10 +804,6 @@
                         <li><span class="lang-en">• ADEA - AI Digital Life Agency</span><span class="lang-zh">• ADEA - AI數字生命經紀</span></li>
                         <li><span class="lang-en">• AIT-IPL - AI Tool IP Licensing</span><span class="lang-zh">• AIT-IPL - AI工具IP許可</span></li>
                     </ul>
-                    <div class="mt-4 p-3 bg-purple-50 rounded">
-                        <div class="text-sm font-bold text-purple-600"><span class="lang-en">Risk-Return Characteristics</span><span class="lang-zh">風險收益特徵</span></div>
-                        <div class="text-xs text-gray-600"><span class="lang-en">Technology-driven • Annualized 15-30%</span><span class="lang-zh">技術驅動型 • 年化15-30%</span></div>
-                    </div>
                 </div>
             </div>
 
@@ -695,10 +827,6 @@
                         <li><span class="lang-en">• EN-NFT - Emergent Narrative Copyright</span><span class="lang-zh">• EN-NFT - 湧現敘事版權</span></li>
                         <li><span class="lang-en">• VVR-License - Virtual Venue Rental</span><span class="lang-zh">• VVR-License - 虛擬場地租賃</span></li>
                     </ul>
-                    <div class="mt-4 p-3 bg-green-50 rounded">
-                        <div class="text-sm font-bold text-green-600"><span class="lang-en">Value Characteristics</span><span class="lang-zh">價值特徵</span></div>
-                        <div class="text-xs text-gray-600"><span class="lang-en">Functional • Use+Collection+Scarcity Value</span><span class="lang-zh">功能型 • 使用+收藏+稀缺價值</span></div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1241,6 +1369,31 @@
                 observer.observe(el);
             });
         });
+
+        // --- Compliance Modal Logic (Added from token2.html) ---
+        const complianceChecks = document.querySelectorAll('.compliance-check');
+        const complianceBtn = document.getElementById('complianceBtn');
+        const complianceModal = document.getElementById('complianceModal');
+        const mainBody = document.getElementById('mainBody');
+
+        complianceChecks.forEach(check => {
+            check.addEventListener('change', validateCompliance);
+        });
+
+        function validateCompliance() {
+            const allChecked = Array.from(complianceChecks).every(c => c.checked);
+            complianceBtn.disabled = !allChecked;
+        }
+
+        function acceptCompliance() {
+            complianceModal.style.opacity = '0';
+            complianceModal.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                complianceModal.classList.add('hidden');
+                // Enable scrolling on body
+                mainBody.classList.remove('overflow-hidden');
+            }, 500);
+        }
     </script>
 </body>
 </html>
