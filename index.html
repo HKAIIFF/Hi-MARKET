@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <!-- Added Font Awesome for the Modal Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -80,10 +79,10 @@
         .img-zoom-container img { transition: transform 0.7s ease; }
         .group:hover .img-zoom-container img { transform: scale(1.05); }
 
-        /* --- Modal Styles from Token2.html --- */
+        /* Compliance Modal Styles */
         .compliance-overlay {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
         }
 
         .custom-checkbox {
@@ -119,18 +118,14 @@
     </style>
 </head>
 
-<!-- Added id="mainBody" and overflow-hidden for modal handling -->
 <body id="mainBody" data-lang="en" class="bg-white text-black selection:bg-black selection:text-white overflow-hidden">
 
-    <!-- Compliance Modal (Integrated from token2.html) -->
     <div id="complianceModal" class="fixed inset-0 z-[100] compliance-overlay flex items-center justify-center p-4">
         <div class="bg-white border border-black shadow-2xl rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto flex flex-col relative">
             
-            <!-- Language Toggle in Modal -->
             <div class="absolute top-6 right-6 z-10">
                 <button onclick="toggleLanguage()" class="text-xs font-mono border border-gray-200 px-3 py-1.5 rounded-full hover:bg-black hover:text-white transition-all uppercase flex items-center gap-2">
                     <i class="fas fa-globe"></i>
-                    <!-- Updated to match Nav logic: Show target language -->
                     <span class="lang-en">繁中</span><span class="lang-zh">EN</span>
                 </button>
             </div>
@@ -191,16 +186,16 @@
                     <label class="flex items-start gap-3 cursor-pointer group">
                         <input type="checkbox" class="custom-checkbox mt-0.5 compliance-check">
                         <span class="text-sm group-hover:text-black text-gray-600 transition-colors">
-                            <span class="lang-zh">本人知悉數字資產投資風險</span>
-                            <span class="lang-en">I am aware of the risks involved in digital asset investment</span>
+                            <span class="lang-zh">本人知悉數字資產風險</span>
+                            <span class="lang-en">I am aware of the risks involved in digital assets</span>
                         </span>
                     </label>
 
                     <label class="flex items-start gap-3 cursor-pointer group">
                         <input type="checkbox" class="custom-checkbox mt-0.5 compliance-check">
                         <span class="text-sm group-hover:text-black text-gray-600 transition-colors">
-                            <span class="lang-zh">本人自願承擔全部投資風險</span>
-                            <span class="lang-en">I voluntarily assume all investment risks</span>
+                            <span class="lang-zh">本人自願承擔全部風險</span>
+                            <span class="lang-en">I voluntarily assume all risks</span>
                         </span>
                     </label>
                 </div>
@@ -219,8 +214,6 @@
             </div>
         </div>
     </div>
-    <!-- End Compliance Modal -->
-
     <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 transition-all duration-300">
         <div class="px-6 md:px-8 py-4 flex justify-between items-center max-w-[1920px] mx-auto">
             <a href="#" class="flex items-center gap-4 group">
@@ -236,7 +229,7 @@
             <div class="hidden xl:flex items-center gap-1 text-[13px] font-medium tracking-wide">
                 <a href="#about" class="px-4 py-2 rounded-full hover:bg-gray-100 transition-colors"><span class="lang-en">About</span><span class="lang-zh">關於</span></a>
                 <a href="#ecosystem" class="px-4 py-2 rounded-full hover:bg-gray-100 transition-colors"><span class="lang-en">Ecosystem</span><span class="lang-zh">生態</span></a>
-                <a href="#projects" class="px-4 py-2 rounded-full hover:bg-gray-100 transition-colors"><span class="lang-en">RWA Projects</span><span class="lang-zh">RWA項目</span></a>
+                <a href="#projects" class="px-4 py-2 rounded-full hover:bg-gray-100 transition-colors"><span class="lang-en">RWA Assets</span><span class="lang-zh">RWA資產</span></a>
                 <a href="#participation" class="px-4 py-2 rounded-full hover:bg-gray-100 transition-colors"><span class="lang-en">Participation</span><span class="lang-zh">參與</span></a>
                 <a href="#market" class="px-4 py-2 rounded-full hover:bg-gray-100 transition-colors"><span class="lang-en">Market</span><span class="lang-zh">市場</span></a>
                 <a href="#partners" class="px-4 py-2 rounded-full hover:bg-gray-100 transition-colors"><span class="lang-en">Partners</span><span class="lang-zh">合作</span></a>
@@ -248,7 +241,7 @@
                 </button>
                 
                 <a href="#participation" class="hidden md:flex bg-black text-white text-[13px] font-medium px-6 py-3 rounded-full academy-btn items-center gap-2">
-                    <span class="lang-en">Get AIF Token</span><span class="lang-zh">獲取AIF代幣</span>
+                    <span class="lang-en">Access AIF Utility</span><span class="lang-zh">獲取AIF權益</span>
                 </a>
             </div>
         </div>
@@ -260,18 +253,18 @@
                 <div class="mb-6 inline-flex items-center gap-2 border border-gray-200 rounded-full px-3 py-1 bg-gray-50">
                     <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
                     <span class="text-[10px] uppercase tracking-widest font-mono font-medium text-gray-500">
-                        <span class="lang-en">Building Global Infrastructure for Creative Value Economy</span><span class="lang-zh">構建AI時代創意價值經濟的全球基礎設施</span>
+                        <span class="lang-en">Global Infrastructure for AI Creative Industry</span><span class="lang-zh">AI時代創意產業全球基礎設施</span>
                     </span>
                 </div>
                 
                 <h1 class="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.9] mb-10 text-black">
-                    <span class="lang-en">Creative Value <br> Economy.</span>
-                    <span class="lang-zh">創意價值 <br> 經濟新基建</span>
+                    <span class="lang-en">Creative Value <br> Network.</span>
+                    <span class="lang-zh">創意價值 <br> 網絡新基建</span>
                 </h1>
                 
                 <p class="text-lg md:text-xl text-gray-500 max-w-2xl leading-relaxed font-light">
-                    <span class="lang-en">Hong Kong AI Film Market (HKAIFM) is the world's first comprehensive infrastructure platform for creative value economy designed specifically for the AI-native era.</span>
-                    <span class="lang-zh">香港AI電影市場(HKAIFM)是全球首個專門為AI原生時代設計的創意價值經濟綜合基礎設施平台。</span>
+                    <span class="lang-en">Hong Kong AI Film Market (HKAIFM) is the world's first distributed computing settlement and copyright value network designed specifically for the AI-native era.</span>
+                    <span class="lang-zh">香港AI電影市場(HKAIFM)是全球首個專門為AI原生時代設計的分佈式算力結算與版權價值網絡。</span>
                 </p>
             </div>
 
@@ -279,11 +272,11 @@
                 <div class="grid grid-cols-2 gap-px bg-gray-200 border border-gray-200 rounded-lg overflow-hidden">
                     <div class="bg-white p-6 hover:bg-gray-50 transition-colors">
                         <span class="block text-3xl font-bold mb-1">26</span>
-                        <span class="text-[10px] uppercase font-mono text-gray-400"><span class="lang-en">RWA Projects</span><span class="lang-zh">RWA項目</span></span>
+                        <span class="text-[10px] uppercase font-mono text-gray-400"><span class="lang-en">IP Assets</span><span class="lang-zh">IP資產項目</span></span>
                     </div>
                     <div class="bg-white p-6 hover:bg-gray-50 transition-colors">
                         <span class="block text-3xl font-bold mb-1">AIF</span>
-                        <span class="text-[10px] uppercase font-mono text-gray-400"><span class="lang-en">Ecosystem Token</span><span class="lang-zh">生態代幣</span></span>
+                        <span class="text-[10px] uppercase font-mono text-gray-400"><span class="lang-en">Computing Utility</span><span class="lang-zh">算力通證</span></span>
                     </div>
                     <div class="bg-white p-6 hover:bg-gray-50 transition-colors">
                         <span class="block text-3xl font-bold mb-1">6+1+1</span>
@@ -300,9 +293,9 @@
 
     <div class="border-b border-gray-200 py-6 overflow-hidden bg-gray-50">
         <div class="whitespace-nowrap animate-marquee flex items-center gap-12 opacity-80 text-xs font-mono font-medium uppercase tracking-widest text-black">
-            <span>RWA Projects</span> <span>✦</span> <span>Verifiable Digital Assets</span> <span>✦</span> <span>NFT Products</span> <span>✦</span> <span>AIF Token</span> <span>✦</span> <span>Creative Economy</span> <span>✦</span>
-            <span>RWA項目</span> <span>✦</span> <span>可驗證數字資產</span> <span>✦</span> <span>非同質化代幣產品</span> <span>✦</span> <span>AIF代幣</span> <span>✦</span> <span>創意經濟</span> <span>✦</span>
-            <span>RWA Projects</span> <span>✦</span> <span>Verifiable Digital Assets</span> <span>✦</span> <span>NFT Products</span> <span>✦</span> <span>AIF Token</span> <span>✦</span> <span>Creative Economy</span> <span>✦</span>
+            <span>IP Assets</span> <span>✦</span> <span>Verifiable Digital Copyrights</span> <span>✦</span> <span>NFT Products</span> <span>✦</span> <span>AIF Utility</span> <span>✦</span> <span>Creative Economy</span> <span>✦</span>
+            <span>IP資產</span> <span>✦</span> <span>可驗證數字版權</span> <span>✦</span> <span>非同質化產品</span> <span>✦</span> <span>AIF算力通證</span> <span>✦</span> <span>創意經濟</span> <span>✦</span>
+            <span>IP Assets</span> <span>✦</span> <span>Verifiable Digital Copyrights</span> <span>✦</span> <span>NFT Products</span> <span>✦</span> <span>AIF Utility</span> <span>✦</span> <span>Creative Economy</span> <span>✦</span>
         </div>
     </div>
 
@@ -317,8 +310,8 @@
             </div>
             <div class="md:col-span-8">
                 <p class="text-xl font-light text-gray-600 mb-12 reveal-text">
-                    <span class="lang-en">HKAIFM is not a traditional film festival or exchange, but a complete ecosystem integrating creative incubation, value discovery, asset trading, and risk management, specifically serving the creative industry in the AI era.</span>
-                    <span class="lang-zh">HKAIFM不是傳統意義上的電影節或交易所，而是一個集創意孵化、價值發現、資產交易、風險管理於一體的完整生態系統，專門服務於AI時代的創意產業。</span>
+                    <span class="lang-en">HKAIFM is not a traditional exchange, but a complete ecosystem integrating creative incubation, value discovery, and copyright standardization, specifically serving the creative industry.</span>
+                    <span class="lang-zh">HKAIFM不是傳統意義上的交易所，而是一個集創意孵化、價值發現、版權標準化於一體的完整生態系統，專門服務於AI時代的創意產業。</span>
                 </p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 reveal-text">
@@ -326,18 +319,18 @@
                         <h4 class="text-xs uppercase tracking-wider text-gray-500 mb-4"><span class="lang-en">Traditional</span><span class="lang-zh">傳統模式</span></h4>
                         <h3 class="text-2xl font-bold mb-4 line-through decoration-gray-400 decoration-2 text-gray-400"><span class="lang-en">Centralized Markets</span><span class="lang-zh">中心化市場</span></h3>
                         <ul class="text-sm text-gray-500 space-y-3 list-disc pl-4">
-                            <li><span class="lang-en">Limited access for creators</span><span class="lang-zh">創作者參與門檻高</span></li>
+                            <li><span class="lang-en">High barrier for creators</span><span class="lang-zh">創作者參與門檻高</span></li>
                             <li><span class="lang-en">Opaque value assessment</span><span class="lang-zh">價值評估不透明</span></li>
-                            <li><span class="lang-en">High transaction costs</span><span class="lang-zh">交易成本高昂</span></li>
+                            <li><span class="lang-en">High production costs</span><span class="lang-zh">製作成本高昂</span></li>
                         </ul>
                     </div>
                     <div class="p-6 border border-black bg-black text-white rounded-lg shadow-xl">
                         <h4 class="text-xs uppercase tracking-wider text-gray-400 mb-4"><span class="lang-en">AI Era</span><span class="lang-zh">AI 時代</span></h4>
-                        <h3 class="text-2xl font-bold mb-4"><span class="lang-en">Decentralized Ecosystem</span><span class="lang-zh">去中心化生態</span></h3>
+                        <h3 class="text-2xl font-bold mb-4"><span class="lang-en">Distributed Ecosystem</span><span class="lang-zh">分佈式生態</span></h3>
                         <ul class="text-sm text-gray-300 space-y-3 list-disc pl-4">
                             <li><span class="lang-en">Global access for creators</span><span class="lang-zh">全球創作者參與</span></li>
                             <li><span class="lang-en">Transparent value discovery</span><span class="lang-zh">透明價值發現機制</span></li>
-                            <li><span class="lang-en">Low-cost transactions</span><span class="lang-zh">低成本交易</span></li>
+                            <li><span class="lang-en">Low-cost efficient creation</span><span class="lang-zh">AI賦能低成本創作</span></li>
                         </ul>
                     </div>
                 </div>
@@ -345,26 +338,26 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 reveal-text">
                     <div class="p-6 bg-gray-50 rounded-lg border border-gray-200">
                         <div class="text-3xl mb-4">🔍</div>
-                        <h4 class="font-bold mb-2"><span class="lang-en">Value Discovery Engine</span><span class="lang-zh">價值發現引擎</span></h4>
+                        <h4 class="font-bold mb-2"><span class="lang-en">Value Discovery</span><span class="lang-zh">價值發現引擎</span></h4>
                         <p class="text-sm text-gray-600">
-                            <span class="lang-en">Establish the world's first intelligent assessment system for AI-native creative assets, combining AI algorithms, expert reviews, and market validation.</span>
-                            <span class="lang-zh">建立全球首個AI原生創意資產的智能評估體系，結合人工智能算法、行業專家評審、市場交易驗證三重機制。</span>
+                            <span class="lang-en">Establish intelligent assessment system for AI-native creative assets using algorithms and market validation.</span>
+                            <span class="lang-zh">建立AI原生創意資產的智能評估體系，結合人工智能算法與市場驗證機制。</span>
                         </p>
                     </div>
                     <div class="p-6 bg-gray-50 rounded-lg border border-gray-200">
                         <div class="text-3xl mb-4">🔄</div>
-                        <h4 class="font-bold mb-2"><span class="lang-en">Circulation Accelerator</span><span class="lang-zh">流通加速器</span></h4>
+                        <h4 class="font-bold mb-2"><span class="lang-en">Circulation</span><span class="lang-zh">流通加速器</span></h4>
                         <p class="text-sm text-gray-600">
-                            <span class="lang-en">Through blockchain technology and smart contracts, standardize creative assets into tradable digital assets, enabling 24/7 efficient circulation globally.</span>
-                            <span class="lang-zh">通過區塊鏈技術和智能合約，將各類創意資產標準化為可交易的數字資產，在全球範圍內實現7x24小時的高效流通。</span>
+                            <span class="lang-en">Standardize creative assets into tradable digital copyrights, enabling efficient global circulation.</span>
+                            <span class="lang-zh">將各類創意資產標準化為可流轉的數字版權，在全球範圍內實現高效流通。</span>
                         </p>
                     </div>
                     <div class="p-6 bg-gray-50 rounded-lg border border-gray-200">
                         <div class="text-3xl mb-4">🛡️</div>
-                        <h4 class="font-bold mb-2"><span class="lang-en">Risk Management Center</span><span class="lang-zh">風險管理中心</span></h4>
+                        <h4 class="font-bold mb-2"><span class="lang-en">Compliance</span><span class="lang-zh">合規框架</span></h4>
                         <p class="text-sm text-gray-600">
-                            <span class="lang-en">Provide comprehensive risk management tools and insurance mechanisms, offering multi-layered risk protection for investors, reducing uncertainty in creative asset investments.</span>
-                            <span class="lang-zh">提供完善的風險管理工具和保險機制，為投資者提供多層次的風險保障，降低創意資產投資的不確定性。</span>
+                            <span class="lang-en">Provide comprehensive risk management tools and operate within strict regulatory frameworks.</span>
+                            <span class="lang-zh">提供完善的風險管理工具，並在嚴格的監管框架內運營數字資產業務。</span>
                         </p>
                     </div>
                 </div>
@@ -374,10 +367,9 @@
 
     <section id="market" class="py-24 px-6 md:px-8 max-w-[1920px] mx-auto bg-gray-50">
         <div class="flex justify-between items-end mb-12 reveal-text">
-            <h2 class="text-3xl font-bold tracking-tight"><span class="lang-en">Market Background</span><span class="lang-zh">市場背景</span></h2>
-            <span class="text-xs font-mono text-gray-400">2026 Market Outlook</span>
+            <h2 class="text-3xl font-bold tracking-tight"><span class="lang-en">Industry Background</span><span class="lang-zh">產業背景</span></h2>
+            <span class="text-xs font-mono text-gray-400">2026 Outlook</span>
         </div>
-
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div class="group bg-white border border-gray-200 p-5 rounded-xl hover:shadow-2xl hover:border-black/10 transition-all duration-500 reveal-text">
                 <div class="aspect-[4/3] bg-gray-100 mb-6 overflow-hidden rounded-lg img-zoom-container">
@@ -389,11 +381,10 @@
                 </div>
                 <h3 class="text-xl font-bold mb-3 group-hover:text-gray-600 transition-colors"><span class="lang-en">Market Size</span><span class="lang-zh">市場規模</span></h3>
                 <p class="text-sm text-gray-500 leading-relaxed mb-6">
-                    <span class="lang-en">AI content creation market projected to reach $370 billion by 2030, with Asia-Pacific accounting for 35% market share.</span>
-                    <span class="lang-zh">AI內容創作市場預計到2030年達到3700億美元，亞太地區佔35%市場份額。</span>
+                    <span class="lang-en">AI content creation market projected to reach $370 billion by 2030.</span>
+                    <span class="lang-zh">AI內容創作市場預計到2030年達到3700億美元。</span>
                 </p>
             </div>
-
             <div class="group bg-white border border-gray-200 p-5 rounded-xl hover:shadow-2xl hover:border-black/10 transition-all duration-500 reveal-text delay-100">
                 <div class="aspect-[4/3] bg-gray-100 mb-6 overflow-hidden rounded-lg img-zoom-container">
                     <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Growth Rate" class="w-full h-full object-cover">
@@ -404,12 +395,11 @@
                 </div>
                 <h3 class="text-xl font-bold mb-3 group-hover:text-gray-600 transition-colors"><span class="lang-en">Growth Rate</span><span class="lang-zh">增長率</span></h3>
                 <p class="text-sm text-gray-500 leading-relaxed mb-6">
-                    <span class="lang-en">Annual compound growth rate of 37% in AI content creation, driven by technological advancements and increasing adoption.</span>
-                    <span class="lang-zh">AI內容創作年複合增長率達37%，由技術進步和採用率提高推動。</span>
+                    <span class="lang-en">Annual compound growth rate of 37% in AI content creation.</span>
+                    <span class="lang-zh">AI內容創作年複合增長率達37%。</span>
                 </p>
             </div>
-
-            <div class="group bg-white border border-gray-200 p-5 rounded-xl hover:shadow-2xl hover:border-black/10 transition-all duration-500 reveal-text delay-200">
+             <div class="group bg-white border border-gray-200 p-5 rounded-xl hover:shadow-2xl hover:border-black/10 transition-all duration-500 reveal-text delay-200">
                 <div class="aspect-[4/3] bg-gray-100 mb-6 overflow-hidden rounded-lg img-zoom-container">
                     <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hong Kong Advantage" class="w-full h-full object-cover">
                 </div>
@@ -419,12 +409,11 @@
                 </div>
                 <h3 class="text-xl font-bold mb-3 group-hover:text-gray-600 transition-colors"><span class="lang-en">Hong Kong Advantage</span><span class="lang-zh">香港優勢</span></h3>
                 <p class="text-sm text-gray-500 leading-relaxed mb-6">
-                    <span class="lang-en">Strategic position as a bridge between East and West, with world-class infrastructure and regulatory environment.</span>
-                    <span class="lang-zh">作為東西方橋樑的戰略地位，擁有世界級基礎設施和監管環境。</span>
+                    <span class="lang-en">Strategic position as a bridge between East and West.</span>
+                    <span class="lang-zh">作為東西方橋樑的戰略地位。</span>
                 </p>
             </div>
-
-            <div class="group bg-white border border-gray-200 p-5 rounded-xl hover:shadow-2xl hover:border-black/10 transition-all duration-500 reveal-text delay-300">
+             <div class="group bg-white border border-gray-200 p-5 rounded-xl hover:shadow-2xl hover:border-black/10 transition-all duration-500 reveal-text delay-300">
                 <div class="aspect-[4/3] bg-gray-100 mb-6 overflow-hidden rounded-lg img-zoom-container">
                     <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Creative Revolution" class="w-full h-full object-cover">
                 </div>
@@ -434,8 +423,8 @@
                 </div>
                 <h3 class="text-xl font-bold mb-3 group-hover:text-gray-600 transition-colors"><span class="lang-en">Creative Revolution</span><span class="lang-zh">創作革命</span></h3>
                 <p class="text-sm text-gray-500 leading-relaxed mb-6">
-                    <span class="lang-en">AI-native creation models enable small teams to produce high-quality content in weeks instead of years.</span>
-                    <span class="lang-zh">AI原生創作模式使小團隊能在幾週內製作出高質量內容，而非數年。</span>
+                    <span class="lang-en">AI-native creation models enable efficient production.</span>
+                    <span class="lang-zh">AI原生創作模式帶來高效的生產變革。</span>
                 </p>
             </div>
         </div>
@@ -451,7 +440,7 @@
             </div>
             <div class="text-right">
                 <div class="text-4xl font-bold font-mono tracking-tight">6+1+1</div>
-                <div class="text-xs uppercase tracking-widest text-gray-400 mt-1"><span class="lang-en">Platforms + Token + Governance</span><span class="lang-zh">平台+代幣+治理</span></div>
+                <div class="text-xs uppercase tracking-widest text-gray-400 mt-1"><span class="lang-en">Platforms + Utility + Governance</span><span class="lang-zh">平台+權益+治理</span></div>
             </div>
         </div>
 
@@ -462,8 +451,8 @@
                 <p class="text-xs uppercase tracking-widest opacity-50 mb-8"><span class="lang-en">AI Film Academy</span><span class="lang-zh">AI電影學院</span></p>
                 <div class="text-5xl font-bold mb-4 font-serif italic">🎓</div>
                 <p class="text-xs opacity-50 leading-relaxed border-t border-current pt-4 group-hover:border-white/20">
-                    <span class="lang-en">Talent cultivation and skill certification platform, establishing the world's most authoritative AI creation education brand.</span>
-                    <span class="lang-zh">人才培養與技能認證平台，建立全球最權威的AI創作教育品牌。</span>
+                    <span class="lang-en">Talent cultivation and skill certification platform.</span>
+                    <span class="lang-zh">人才培養與技能認證平台，建立AI創作教育品牌。</span>
                 </p>
             </div>
 
@@ -473,7 +462,7 @@
                 <p class="text-xs uppercase tracking-widest opacity-50 mb-8"><span class="lang-en">AI International Film Festival</span><span class="lang-zh">AI國際電影節</span></p>
                 <div class="text-5xl font-bold mb-4 font-serif italic">🏆</div>
                 <p class="text-xs opacity-50 leading-relaxed border-t border-current pt-4 group-hover:border-white/20">
-                    <span class="lang-en">Content display and value discovery platform, a "value discovery engine" for AI-native content.</span>
+                    <span class="lang-en">Content display and value discovery platform.</span>
                     <span class="lang-zh">內容展示與價值發現平台，AI原生內容的"價值發現引擎"。</span>
                 </p>
             </div>
@@ -484,18 +473,18 @@
                 <p class="text-xs uppercase tracking-widest opacity-50 mb-8"><span class="lang-en">Asset Market</span><span class="lang-zh">資產市場</span></p>
                 <div class="text-5xl font-bold mb-4 font-serif italic">💎</div>
                 <p class="text-xs opacity-50 leading-relaxed border-t border-current pt-4 group-hover:border-white/20">
-                    <span class="lang-en">The "asset factory" of the ecosystem, becoming the world's largest digital creative asset issuance platform.</span>
-                    <span class="lang-zh">生態系統的"資產工廠"，成為全球最大的數字創意資產發行平台。</span>
+                    <span class="lang-en">The "asset factory" of the ecosystem.</span>
+                    <span class="lang-zh">生態系統的"資產工廠"，數字創意資產發布平台。</span>
                 </p>
             </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 pt-8 reveal-text">
             <div>
-                <h4 class="font-bold text-sm mb-6 pb-2 border-b border-gray-200 uppercase tracking-wider"><span class="lang-en">Exchange & Services</span><span class="lang-zh">交易所與服務</span></h4>
+                <h4 class="font-bold text-sm mb-6 pb-2 border-b border-gray-200 uppercase tracking-wider"><span class="lang-en">Services</span><span class="lang-zh">服務與設施</span></h4>
                 <ul class="space-y-4">
                     <li class="flex justify-between items-center text-sm group">
-                        <span class="text-gray-700 group-hover:text-black font-medium"><span class="lang-en">AIF.Exchange</span><span class="lang-zh">AIF交易所</span></span>
+                        <span class="text-gray-700 group-hover:text-black font-medium"><span class="lang-en">AIF.Exchange</span><span class="lang-zh">AIF交易平台</span></span>
                         <span class="font-mono text-gray-400">🔄</span>
                     </li>
                     <li class="flex justify-between items-center text-sm group">
@@ -509,10 +498,10 @@
                 </ul>
             </div>
             <div>
-                <h4 class="font-bold text-sm mb-6 pb-2 border-b border-gray-200 uppercase tracking-wider"><span class="lang-en">Token & Governance</span><span class="lang-zh">代幣與治理</span></h4>
+                <h4 class="font-bold text-sm mb-6 pb-2 border-b border-gray-200 uppercase tracking-wider"><span class="lang-en">Utility & Governance</span><span class="lang-zh">權益與治理</span></h4>
                 <ul class="space-y-4">
                     <li class="flex justify-between items-center text-sm group">
-                        <span class="text-gray-700 group-hover:text-black font-medium"><span class="lang-en">AIF Token System</span><span class="lang-zh">AIF代幣體系</span></span>
+                        <span class="text-gray-700 group-hover:text-black font-medium"><span class="lang-en">AIF Utility System</span><span class="lang-zh">AIF權益體系</span></span>
                         <span class="font-mono text-gray-400">💰</span>
                     </li>
                     <li class="flex justify-between items-center text-sm group">
@@ -524,17 +513,17 @@
         </div>
 
         <div class="mt-20 pt-16 border-t border-gray-200">
-            <h3 class="text-3xl font-bold text-center mb-12 reveal-text"><span class="lang-zh">AIF代幣體系 - 生態價值載體</span><span class="lang-en">AIF Token System - Ecosystem Value Carrier</span></h3>
+            <h3 class="text-3xl font-bold text-center mb-12 reveal-text"><span class="lang-zh">AIF 體系 - 產業能源</span><span class="lang-en">AIF System - Industry Fuel</span></h3>
             
             <div class="max-w-4xl mx-auto space-y-8">
                 <div class="p-8 bg-gray-50 rounded-xl border border-gray-200 reveal-text">
                     <div class="flex items-start gap-4">
                         <div class="flex-shrink-0 w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-bold font-mono">AIF</div>
                         <div class="flex-1">
-                            <h4 class="text-xl font-bold mb-3"><span class="lang-zh">代幣基本信息</span><span class="lang-en">Token Basic Information</span></h4>
+                            <h4 class="text-xl font-bold mb-3"><span class="lang-zh">基本信息</span><span class="lang-en">Basic Information</span></h4>
                             <p class="text-gray-600 mb-4">
-                                <span class="lang-zh">代幣名稱：AIF (AI Film Token) | 代幣標準：SPL+Solana | 總發行量：100億枚（固定供應量，不會增發） | 通縮機制：平台收入的一定比例用於回購銷毀</span>
-                                <span class="lang-en">Token Name: AIF (AI Film Token) | Token Standard: SPL+Solana | Total Supply: 10 Billion (Fixed supply, no additional issuance) | Deflationary Mechanism: A certain percentage of platform revenue is used for buyback and burn</span>
+                                <span class="lang-zh">屬性：AI影視算力能源憑證（數字石油） | 總量：100億（固定供應） | 機制：使用即消耗，作為生成視頻的工業原料</span>
+                                <span class="lang-en">Attribute: AI Film Computing Fuel (Digital Oil) | Total Supply: 10 Billion (Fixed) | Mechanism: Consumed upon usage, industrial raw material for generation</span>
                             </p>
                         </div>
                     </div>
@@ -544,10 +533,10 @@
                     <div class="flex items-start gap-4">
                         <div class="flex-shrink-0 w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-bold font-mono">💎</div>
                         <div class="flex-1">
-                            <h4 class="text-xl font-bold mb-3"><span class="lang-zh">代幣功能與用途</span><span class="lang-en">Token Functions and Uses</span></h4>
+                            <h4 class="text-xl font-bold mb-3"><span class="lang-zh">功能與用途</span><span class="lang-en">Functions and Uses</span></h4>
                             <p class="text-gray-600 mb-4">
-                                <span class="lang-zh">治理功能：參與生態系統重大決策投票 | 經濟功能：交易手續費折扣、優先認購權、收益分成 | 實用功能：服務支付、內容解鎖、NFT鑄造 | 權益功能：參與RWA項目投資的必要條件</span>
-                                <span class="lang-en">Governance: Participate in major ecosystem decision voting | Economic: Trading fee discounts, priority subscription rights, revenue sharing | Utility: Service payment, content unlocking, NFT minting | Rights: Necessary condition for participating in RWA project investments</span>
+                                <span class="lang-zh">治理功能：參與生態決策 | 實用功能：服務支付、內容解鎖、NFT鑄造 | 權益功能：參與RWA項目節點的必要條件</span>
+                                <span class="lang-en">Governance: Participate in decision making | Utility: Service payment, content unlocking, NFT minting | Rights: Necessary condition for participating in RWA project nodes</span>
                             </p>
                         </div>
                     </div>
@@ -564,190 +553,73 @@
                 <div class="relative pl-8 border-l border-gray-200 space-y-12">
                     <div class="relative">
                         <span class="absolute -left-[37px] top-1 w-4 h-4 bg-black rounded-full border-2 border-white shadow-md"></span>
-                        <h4 class="text-sm font-bold uppercase mb-1"><span class="lang-en">Get AIF Tokens</span><span class="lang-zh">獲取AIF代幣</span></h4>
+                        <h4 class="text-sm font-bold uppercase mb-1"><span class="lang-en">Acquire AIF</span><span class="lang-zh">獲取AIF</span></h4>
                         <p class="text-xs text-gray-400 font-mono mb-2">Step 1</p>
-                        <p class="text-sm text-gray-600"><span class="lang-en">Purchase AIF tokens on major exchanges or obtain them by participating in ecosystem activities. Minimum holding: 1000 AIF</span><span class="lang-zh">在主流交易所購買AIF代幣，或通過參與生態活動獲得。最低持倉量：1000 AIF</span></p>
+                        <p class="text-sm text-gray-600"><span class="lang-en">Obtain AIF credits through ecosystem contribution or exchanges. Minimum: 1000 AIF</span><span class="lang-zh">通過生態貢獻或交易所獲取AIF積分。最低持有：1000 AIF</span></p>
                     </div>
                     <div class="relative">
                         <span class="absolute -left-[37px] top-1 w-4 h-4 bg-gray-300 rounded-full border-2 border-white"></span>
-                        <h4 class="text-sm font-bold uppercase mb-1 text-gray-500"><span class="lang-en">Complete KYC</span><span class="lang-zh">完成KYC認證</span></h4>
+                        <h4 class="text-sm font-bold uppercase mb-1 text-gray-500"><span class="lang-en">Identity Verification</span><span class="lang-zh">身份認證</span></h4>
                         <p class="text-xs text-gray-400 font-mono mb-2">Step 2</p>
-                        <p class="text-sm text-gray-500"><span class="lang-en">Submit identity verification documents, complete investor suitability assessment, ensuring compliance with local regulatory requirements.</span><span class="lang-zh">提交身份認證資料，完成投資者適當性評估，確保符合各地監管要求。</span></p>
+                        <p class="text-sm text-gray-500"><span class="lang-en">Submit verification documents ensuring compliance with local regulatory requirements.</span><span class="lang-zh">提交身份認證資料，確保符合各地監管要求。</span></p>
                     </div>
                      <div class="relative">
                         <span class="absolute -left-[37px] top-1 w-4 h-4 bg-gray-200 rounded-full border-2 border-white"></span>
-                        <h4 class="text-sm font-bold uppercase mb-1 text-gray-400"><span class="lang-en">Stake Tokens</span><span class="lang-zh">質押代幣</span></h4>
+                        <h4 class="text-sm font-bold uppercase mb-1 text-gray-400"><span class="lang-en">Activate Node</span><span class="lang-zh">激活節點</span></h4>
                         <p class="text-xs text-gray-400 font-mono mb-2">Step 3</p>
-                        <p class="text-sm text-gray-400"><span class="lang-en">Stake the corresponding amount of AIF tokens according to different RWA project requirements, obtaining project investment qualifications.</span><span class="lang-zh">根據不同RWA項目要求，質押相應數量的AIF代幣，獲得項目投資資格。</span></p>
+                        <p class="text-sm text-gray-400"><span class="lang-en">Lock AIF to activate node status and obtain ecosystem rights.</span><span class="lang-zh">鎖定AIF以激活節點身份，獲得生態權益。</span></p>
                     </div>
                 </div>
             </div>
 
             <div class="bg-white p-10 rounded-2xl border border-gray-200 shadow-sm reveal-text delay-100">
-                <h3 class="text-lg font-bold mb-8"><span class="lang-en">AIF Token Staking Requirements</span><span class="lang-zh">AIF代幣質押要求</span></h3>
+                <h3 class="text-lg font-bold mb-8"><span class="lang-en">AIF Node Rights</span><span class="lang-zh">AIF 節點權益</span></h3>
                 
                 <div class="space-y-6 mb-8">
                     <div class="p-4 border border-gray-200 rounded-lg">
                         <div class="flex justify-between items-center mb-2">
-                            <h4 class="font-bold"><span class="lang-en">Bronze Investor</span><span class="lang-zh">銅牌投資者</span></h4>
+                            <h4 class="font-bold"><span class="lang-en">Bronze Node</span><span class="lang-zh">銅牌節點</span></h4>
                             <span class="font-mono text-gray-500">1,000 AIF</span>
                         </div>
                         <ul class="text-sm text-gray-600 space-y-1">
-                            <li><span class="lang-en">• Participate in basic RWA projects</span><span class="lang-zh">• 參與基礎RWA項目</span></li>
-                            <li><span class="lang-en">• Enjoy 5% fee discount</span><span class="lang-zh">• 享受5%手續費折扣</span></li>
-                            <li><span class="lang-en">• Basic voting weight</span><span class="lang-zh">• 基礎投票權重</span></li>
+                            <li><span class="lang-en">• Participate in basic projects</span><span class="lang-zh">• 參與基礎項目</span></li>
+                            <li><span class="lang-en">• 5% computing cost discount</span><span class="lang-zh">• 享受5%算力成本折扣</span></li>
+                            <li><span class="lang-en">• Basic voting rights</span><span class="lang-zh">• 基礎投票權重</span></li>
                         </ul>
                     </div>
                     
                     <div class="p-4 border border-gray-300 rounded-lg">
                         <div class="flex justify-between items-center mb-2">
-                            <h4 class="font-bold"><span class="lang-en">Silver Investor</span><span class="lang-zh">銀牌投資者</span></h4>
+                            <h4 class="font-bold"><span class="lang-en">Silver Node</span><span class="lang-zh">銀牌節點</span></h4>
                             <span class="font-mono text-gray-500">10,000 AIF</span>
                         </div>
                         <ul class="text-sm text-gray-600 space-y-1">
-                            <li><span class="lang-en">• Participate in all RWA projects</span><span class="lang-zh">• 參與所有RWA項目</span></li>
-                            <li><span class="lang-en">• Enjoy 15% fee discount</span><span class="lang-zh">• 享受15%手續費折扣</span></li>
-                            <li><span class="lang-en">• Priority subscription rights</span><span class="lang-zh">• 優先認購權</span></li>
+                            <li><span class="lang-en">• Participate in all projects</span><span class="lang-zh">• 參與所有項目</span></li>
+                            <li><span class="lang-en">• 15% computing cost discount</span><span class="lang-zh">• 享受15%算力成本折扣</span></li>
+                            <li><span class="lang-en">• Priority access</span><span class="lang-zh">• 優先參與權</span></li>
                         </ul>
                     </div>
                     
                     <div class="p-4 border border-yellow-400 rounded-lg">
                         <div class="flex justify-between items-center mb-2">
-                            <h4 class="font-bold"><span class="lang-en">Gold Investor</span><span class="lang-zh">金牌投資者</span></h4>
+                            <h4 class="font-bold"><span class="lang-en">Gold Node</span><span class="lang-zh">金牌節點</span></h4>
                             <span class="font-mono text-gray-500">100,000 AIF</span>
                         </div>
                         <ul class="text-sm text-gray-600 space-y-1">
-                            <li><span class="lang-en">• Participate in VIP exclusive projects</span><span class="lang-zh">• 參與VIP專屬項目</span></li>
-                            <li><span class="lang-en">• Enjoy 30% fee discount</span><span class="lang-zh">• 享受30%手續費折扣</span></li>
-                            <li><span class="lang-en">• Early project privileges</span><span class="lang-zh">• 早期項目特權</span></li>
+                            <li><span class="lang-en">• VIP exclusive projects</span><span class="lang-zh">• 參與VIP專屬項目</span></li>
+                            <li><span class="lang-en">• 30% computing cost discount</span><span class="lang-zh">• 享受30%算力成本折扣</span></li>
+                            <li><span class="lang-en">• Early privileges</span><span class="lang-zh">• 早期項目特權</span></li>
                         </ul>
                     </div>
                 </div>
 
                 <button class="w-full bg-black text-white py-4 rounded-full font-bold academy-btn">
-                    <span class="lang-en">Get AIF Token</span><span class="lang-zh">獲取AIF代幣</span>
+                    <span class="lang-en">Access AIF Utility</span><span class="lang-zh">獲取AIF權益</span>
                 </button>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-24 px-6 md:px-8 max-w-[1920px] mx-auto">
-        <div class="mb-16 reveal-text text-center">
-            <h2 class="text-4xl font-bold mb-6">
-                <span class="lang-en">Core RWA Projects</span>
-                <span class="lang-zh">核心RWA項目</span>
-            </h2>
-            <p class="text-gray-500 max-w-2xl mx-auto">
-                <span class="lang-en">26 innovative RWA projects building a complete AI creative economy ecosystem</span>
-                <span class="lang-zh">26個創新RWA項目，構建完整的AI創意經濟生態</span>
-            </p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal-text">
-            <div class="p-8 bg-white border border-gray-200 rounded-xl hover:bg-black hover:text-white transition-all duration-300 group">
-                <div class="text-4xl mb-4">🌟</div>
-                <h3 class="text-xl font-bold mb-4 group-hover:text-white">
-                    <span class="lang-en">Star Digital Twin Value Anchored Asset</span>
-                    <span class="lang-zh">明星數字孿生價值錨定資產</span>
-                </h3>
-                <p class="text-sm leading-relaxed opacity-70 group-hover:text-gray-300">
-                    <span class="lang-en">Package the digital life rights of real stars into long-term investable assets, allowing investors to share in the continuous value growth of stars in the AI era.</span>
-                    <span class="lang-zh">將真實明星的數字生命權整體打包成可長期持有的投資資產，讓投資者分享明星在AI時代的持續價值增長。</span>
-                </p>
-                <div class="mt-4 pt-4 border-t border-current opacity-50 text-xs">
-                    <span class="lang-en">SDT-VA</span>
-                    <span class="lang-zh">SDT-VA</span>
-                </div>
-            </div>
-
-            <div class="p-8 bg-white border border-gray-200 rounded-xl hover:bg-black hover:text-white transition-all duration-300 group">
-                <div class="text-4xl mb-4">🤖</div>
-                <h3 class="text-xl font-bold mb-4 group-hover:text-white">
-                    <span class="lang-en">AI Digital Life Agency Contract</span>
-                    <span class="lang-zh">AI數字生命經紀合約</span></h3>
-                <p class="text-sm leading-relaxed opacity-70 group-hover:text-gray-300">
-                    <span class="lang-en">Tokenization of exclusive agency rights for AI-native digital life, creating AI talent scout profession, allowing investors to become agents of AI stars.</span>
-                    <span class="lang-zh">AI原生數字生命的獨家經紀權代幣化，創造AI星探職業，讓投資者成為AI明星的經紀人。</span>
-                </p>
-                <div class="mt-4 pt-4 border-t border-current opacity-50 text-xs">
-                    <span class="lang-en">ADEA</span>
-                    <span class="lang-zh">ADEA</span>
-                </div>
-            </div>
-
-            <div class="p-8 bg-white border border-gray-200 rounded-xl hover:bg-black hover:text-white transition-all duration-300 group">
-                <div class="text-4xl mb-4">💼</div>
-                <h3 class="text-xl font-bold mb-4 group-hover:text-white">
-                    <span class="lang-en">Creator Future Income Securitization Token</span>
-                    <span class="lang-zh">創作者未來收入證券化代幣</span>
-                </h3>
-                <p class="text-sm leading-relaxed opacity-70 group-hover:text-gray-300">
-                    <span class="lang-en">Credit assessment-based creator future cash flow securitization financing tool, allowing creators to monetize future income in advance.</span>
-                    <span class="lang-zh">基於信用評估的創作者未來現金流證券化融資工具，讓創作者提前變現未來收入。</span>
-                </p>
-                <div class="mt-4 pt-4 border-t border-current opacity-50 text-xs">
-                    <span class="lang-en">C-FIS</span>
-                    <span class="lang-zh">C-FIS</span>
-                </div>
-            </div>
-
-            <div class="p-8 bg-white border border-gray-200 rounded-xl hover:bg-black hover:text-white transition-all duration-300 group">
-                <div class="text-4xl mb-4">🎟️</div>
-                <h3 class="text-xl font-bold mb-4 group-hover:text-white">
-                    <span class="lang-en">A1 Club Access Pass Derivative</span>
-                    <span class="lang-zh">A1俱樂部入場券衍生品</span>
-                </h3>
-                <p class="text-sm leading-relaxed opacity-70 group-hover:text-gray-300">
-                    <span class="lang-en">Limited-time access rights NFT derived from the globally limited membership A1 CLUB, allowing more people to experience top-tier circle resources.</span>
-                    <span class="lang-zh">全球限量會員制俱樂部的限時訪問權益NFT，讓更多人能夠體驗頂級圈層資源。</span>
-                </p>
-                <div class="mt-4 pt-4 border-t border-current opacity-50 text-xs">
-                    <span class="lang-en">A1C-AP</span>
-                    <span class="lang-zh">A1C-AP</span>
-                </div>
-            </div>
-
-            <div class="p-8 bg-white border border-gray-200 rounded-xl hover:bg-black hover:text-white transition-all duration-300 group">
-                <div class="text-4xl mb-4">📖</div>
-                <h3 class="text-xl font-bold mb-4 group-hover:text-white">
-                    <span class="lang-en">Emergent Narrative Copyright NFT</span>
-                    <span class="lang-zh">湧現敘事版權NFT</span>
-                </h3>
-                <p class="text-sm leading-relaxed opacity-70 group-hover:text-gray-300">
-                    <span class="lang-en">NFT trading of intellectual property rights for high-value "parallel world storylines" co-created by users and AI in 404.world and validated by the market.</span>
-                    <span class="lang-zh">將404.world中由用戶和AI共同創造、經市場驗證的高價值"平行世界故事線"的知識產權進行NFT化交易。</span>
-                </p>
-                <div class="mt-4 pt-4 border-t border-current opacity-50 text-xs">
-                    <span class="lang-en">EN-NFT</span>
-                    <span class="lang-zh">EN-NFT</span>
-                </div>
-            </div>
-
-            <div class="p-8 bg-white border border-gray-200 rounded-xl hover:bg-black hover:text-white transition-all duration-300 group">
-                <div class="text-4xl mb-4">⚙️</div>
-                <h3 class="text-xl font-bold mb-4 group-hover:text-white">
-                    <span class="lang-en">AI Film Production Resource Pool Token</span>
-                    <span class="lang-zh">AI電影製作資源池代幣</span>
-                </h3>
-                <p class="text-sm leading-relaxed opacity-70 group-hover:text-gray-300">
-                    <span class="lang-en">Package core digital resources needed for AI film production into standardized tradable tokens, allowing creators to obtain resources on demand and improve production efficiency.</span>
-                    <span class="lang-zh">將AI電影製作所需的核心數字資源打包成標準化可交易代幣，讓創作者按需獲取資源，提高製作效率。</span>
-                </p>
-                <div class="mt-4 pt-4 border-t border-current opacity-50 text-xs">
-                    <span class="lang-en">PRP-Token</span>
-                    <span class="lang-zh">PRP-Token</span>
-                </div>
-            </div>
-        </div>
-        
-        <div class="text-center mt-12 reveal-text">
-            <button class="bg-black text-white px-8 py-3 rounded-full font-bold academy-btn">
-                <span class="lang-en">View All 26 Projects</span><span class="lang-zh">查看全部26個項目</span>
-            </button>
-        </div>
-    </section>
-
-    <!-- Project Categories Section -->
     <section id="categories" class="py-24 px-6 md:px-8 max-w-[1920px] mx-auto bg-gray-50 border-t border-gray-200">
         <div class="text-center mb-16 reveal-text">
             <h2 class="text-4xl font-bold mb-6">
@@ -755,36 +627,24 @@
                 <span class="lang-zh">項目分類框架</span>
             </h2>
             <p class="text-gray-500 max-w-2xl mx-auto">
-                <span class="lang-en">Using a three-category classification method, each category has clear risk-return characteristics and target user groups</span>
-                <span class="lang-zh">採用三大類別分類法，每個類別都有明確的風險收益特徵和目標用戶群體</span>
+                <span class="lang-en">Three categories with clear risk characteristics</span>
+                <span class="lang-zh">採用三大類別分類法，特徵明確</span>
             </p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- RWA Category -->
             <div class="p-8 bg-white border border-gray-200 rounded-xl reveal-text">
                 <div class="text-center mb-6">
                     <div class="text-4xl mb-4">🏢</div>
-                    <h3 class="text-2xl font-bold text-blue-600 mb-2"><span class="lang-en">RWA Products</span><span class="lang-zh">RWA類產品</span></h3>
+                    <h3 class="text-2xl font-bold text-blue-600 mb-2"><span class="lang-en">IP-RWA</span><span class="lang-zh">IP版權類</span></h3>
                     <p class="text-sm text-gray-400">Real World Assets</p>
                 </div>
                 <p class="text-gray-600 mb-6">
-                    <span class="lang-en">Based on real-world legal contracts and predictable cash flows, with relatively stable return expectations, suitable for investors with lower risk preferences.</span>
-                    <span class="lang-zh">基於現實世界的法律合約和可預測現金流，具有相對穩定的收益預期，適合風險偏好較低的投資者。</span>
+                    <span class="lang-en">Based on legal contracts and copyrights, ensuring clear ownership and usage rights.</span>
+                    <span class="lang-zh">基於現實世界的法律合約和版權，確保清晰的所有權和使用權。</span>
                 </p>
-                <div class="space-y-3">
-                    <div class="text-sm">
-                        <strong class="text-blue-600"><span class="lang-en">Representative Projects:</span><span class="lang-zh">代表項目：</span></strong>
-                    </div>
-                    <ul class="text-sm text-gray-600 space-y-1">
-                        <li><span class="lang-en">• C-FIS - Creator Future Income Securitization</span><span class="lang-zh">• C-FIS - 創作者未來收入證券化</span></li>
-                        <li><span class="lang-en">• DRC-NFT - Film Distribution Rights Contract</span><span class="lang-zh">• DRC-NFT - 影視發行權合約</span></li>
-                        <li><span class="lang-en">• RPL-NFT - Academy Cooperation License</span><span class="lang-zh">• RPL-NFT - 學院合作許可證</span></li>
-                    </ul>
-                </div>
             </div>
 
-            <!-- VDA Category -->
             <div class="p-8 bg-white border border-gray-200 rounded-xl reveal-text">
                 <div class="text-center mb-6">
                     <div class="text-4xl mb-4">🛡️</div>
@@ -792,47 +652,25 @@
                     <p class="text-sm text-gray-400">Verifiable Digital Assets</p>
                 </div>
                 <p class="text-gray-600 mb-6">
-                    <span class="lang-en">Digital native assets created based on verifiable technology, ensuring transparency through smart contracts and on-chain data, with technology-driven growth potential.</span>
-                    <span class="lang-zh">基於可驗證技術創造的數字原生資產，通過智能合約和鏈上數據確保透明度，具有技術驅動的增長潛力。</span>
+                    <span class="lang-en">Digital native assets created based on verifiable technology, ensuring transparency through smart contracts.</span>
+                    <span class="lang-zh">基於可驗證技術創造的數字原生資產，通過智能合約確保透明度。</span>
                 </p>
-                <div class="space-y-3">
-                    <div class="text-sm">
-                        <strong class="text-purple-600"><span class="lang-en">Representative Projects:</span><span class="lang-zh">代表項目：</span></strong>
-                    </div>
-                    <ul class="text-sm text-gray-600 space-y-1">
-                        <li><span class="lang-en">• SDT-VA - Star Digital Twin Asset</span><span class="lang-zh">• SDT-VA - 明星數字孿生資產</span></li>
-                        <li><span class="lang-en">• ADEA - AI Digital Life Agency</span><span class="lang-zh">• ADEA - AI數字生命經紀</span></li>
-                        <li><span class="lang-en">• AIT-IPL - AI Tool IP Licensing</span><span class="lang-zh">• AIT-IPL - AI工具IP許可</span></li>
-                    </ul>
-                </div>
             </div>
 
-            <!-- NFT Category -->
             <div class="p-8 bg-white border border-gray-200 rounded-xl reveal-text">
                 <div class="text-center mb-6">
                     <div class="text-4xl mb-4">💎</div>
-                    <h3 class="text-2xl font-bold text-green-600 mb-2"><span class="lang-en">NFT Products</span><span class="lang-zh">NFT類產品</span></h3>
+                    <h3 class="text-2xl font-bold text-green-600 mb-2"><span class="lang-en">NFT Rights</span><span class="lang-zh">NFT權益類</span></h3>
                     <p class="text-sm text-gray-400">Non-Fungible Tokens</p>
                 </div>
                 <p class="text-gray-600 mb-6">
-                    <span class="lang-en">Digital assets based on uniqueness and scarcity, mainly providing functional value, membership rights, and collectible value, suitable for users pursuing unique experiences.</span>
-                    <span class="lang-zh">基於獨特性和稀缺性的數字資產，主要提供功能性價值、會員權益和收藏價值，適合追求獨特體驗和社區參與的用戶。</span>
+                    <span class="lang-en">Digital assets based on uniqueness, providing functional value, membership rights, and collection value.</span>
+                    <span class="lang-zh">基於獨特性的數字資產，主要提供功能性價值、會員權益和收藏價值。</span>
                 </p>
-                <div class="space-y-3">
-                    <div class="text-sm">
-                        <strong class="text-green-600"><span class="lang-en">Representative Projects:</span><span class="lang-zh">代表項目：</span></strong>
-                    </div>
-                    <ul class="text-sm text-gray-600 space-y-1">
-                        <li><span class="lang-en">• A1C-AP - A1 Club Access Pass</span><span class="lang-zh">• A1C-AP - A1俱樂部入場券</span></li>
-                        <li><span class="lang-en">• EN-NFT - Emergent Narrative Copyright</span><span class="lang-zh">• EN-NFT - 湧現敘事版權</span></li>
-                        <li><span class="lang-en">• VVR-License - Virtual Venue Rental</span><span class="lang-zh">• VVR-License - 虛擬場地租賃</span></li>
-                    </ul>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Complete Project List -->
     <section id="project-list" class="py-24 px-6 md:px-8 max-w-[1920px] mx-auto">
         <div class="text-center mb-16 reveal-text">
             <h2 class="text-4xl font-bold mb-6">
@@ -840,25 +678,23 @@
                 <span class="lang-zh">完整項目清單</span>
             </h2>
             <p class="text-gray-500 max-w-2xl mx-auto">
-                <span class="lang-en">26 innovative RWA projects building a complete AI creative economy ecosystem</span>
-                <span class="lang-zh">26個創新RWA項目，構建完整的AI創意經濟生態</span>
+                <span class="lang-en">26 innovative projects building a complete AI creative economy ecosystem</span>
+                <span class="lang-zh">26個創新項目，構建完整的AI創意經濟生態</span>
             </p>
         </div>
 
-        <!-- Project Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 reveal-text">
-            <!-- Projects 1-8 -->
             <div class="p-4 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-all">
                 <div class="flex items-center mb-3">
                     <span class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-sm font-bold mr-3">1</span>
                     <div>
                         <div class="font-bold text-sm">SDT-VA</div>
-                        <div class="text-xs text-gray-400"><span class="lang-en">Star Digital Twin Value Anchored Asset</span><span class="lang-zh">明星數字孿生價值錨定資產</span></div>
+                        <div class="text-xs text-gray-400"><span class="lang-en">Star Digital Twin License</span><span class="lang-zh">明星數字孿生授權</span></div>
                     </div>
                 </div>
                 <div class="text-xs text-gray-600">
-                    <span class="lang-en">Package the digital life rights of real stars into long-term investable assets</span>
-                    <span class="lang-zh">將真實明星的數字生命權整體打包成可長期持有的投資資產</span>
+                    <span class="lang-en">License the digital life rights of real stars as digital assets.</span>
+                    <span class="lang-zh">將真實明星的數字生命權轉化為數字資產授權。</span>
                 </div>
             </div>
 
@@ -867,12 +703,12 @@
                     <span class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-sm font-bold mr-3">2</span>
                     <div>
                         <div class="font-bold text-sm">ADEA</div>
-                        <div class="text-xs text-gray-400"><span class="lang-en">AI Digital Life Agency Contract</span><span class="lang-zh">AI數字生命經紀合約</span></div>
+                        <div class="text-xs text-gray-400"><span class="lang-en">AI Digital Life Agency</span><span class="lang-zh">AI數字生命經紀</span></div>
                     </div>
                 </div>
                 <div class="text-xs text-gray-600">
-                    <span class="lang-en">Tokenization of exclusive agency rights for AI-native digital life</span>
-                    <span class="lang-zh">AI原生數字生命的獨家經紀權代幣化</span>
+                    <span class="lang-en">Management of exclusive agency rights for AI-native digital life.</span>
+                    <span class="lang-zh">AI原生數字生命的獨家經紀權管理。</span>
                 </div>
             </div>
 
@@ -881,12 +717,12 @@
                     <span class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-sm font-bold mr-3">3</span>
                     <div>
                         <div class="font-bold text-sm">C-FIS</div>
-                        <div class="text-xs text-gray-400"><span class="lang-en">Creator Future Income Securitization Token</span><span class="lang-zh">創作者未來收入證券化代幣</span></div>
+                        <div class="text-xs text-gray-400"><span class="lang-en">Creator Future Income Rights</span><span class="lang-zh">創作者未來收益權</span></div>
                     </div>
                 </div>
                 <div class="text-xs text-gray-600">
-                    <span class="lang-en">Credit assessment-based creator future cash flow securitization</span>
-                    <span class="lang-zh">基於信用評估的創作者未來現金流證券化</span>
+                    <span class="lang-en">Tool for creators to monetize future copyright income in advance.</span>
+                    <span class="lang-zh">幫助創作者提前變現未來版權收入的工具。</span>
                 </div>
             </div>
 
@@ -895,12 +731,12 @@
                     <span class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center text-sm font-bold mr-3">4</span>
                     <div>
                         <div class="font-bold text-sm">A1C-AP</div>
-                        <div class="text-xs text-gray-400"><span class="lang-en">A1 Club Access Pass Derivative</span><span class="lang-zh">A1俱樂部入場券衍生品</span></div>
+                        <div class="text-xs text-gray-400"><span class="lang-en">A1 Club Access Pass</span><span class="lang-zh">A1俱樂部通行證</span></div>
                     </div>
                 </div>
                 <div class="text-xs text-gray-600">
-                    <span class="lang-en">Limited-time access rights NFT from globally limited membership club</span>
-                    <span class="lang-zh">全球限量會員制俱樂部的限時訪問權益NFT</span>
+                    <span class="lang-en">Limited-time access rights NFT for global membership club.</span>
+                    <span class="lang-zh">全球限量會員制俱樂部的限時訪問權益NFT。</span>
                 </div>
             </div>
 
@@ -909,12 +745,12 @@
                     <span class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-sm font-bold mr-3">5</span>
                     <div>
                         <div class="font-bold text-sm">EN-NFT</div>
-                        <div class="text-xs text-gray-400"><span class="lang-en">Emergent Narrative Copyright NFT</span><span class="lang-zh">湧現敘事版權NFT</span></div>
+                        <div class="text-xs text-gray-400"><span class="lang-en">Emergent Narrative Copyright</span><span class="lang-zh">湧現敘事版權</span></div>
                     </div>
                 </div>
                 <div class="text-xs text-gray-600">
-                    <span class="lang-en">High-value storylines validated by market in 404.world</span>
-                    <span class="lang-zh">404.world中經市場驗證的高價值故事線版權NFT</span>
+                    <span class="lang-en">Copyright trading for storylines co-created by users and AI.</span>
+                    <span class="lang-zh">用戶和AI共同創造的故事線的知識產權交易。</span>
                 </div>
             </div>
 
@@ -923,12 +759,12 @@
                     <span class="w-8 h-8 bg-indigo-500 rounded-full flex items-center justify-center text-sm font-bold mr-3">6</span>
                     <div>
                         <div class="font-bold text-sm">PRP-Token</div>
-                        <div class="text-xs text-gray-400"><span class="lang-en">AI Film Production Resource Pool Token</span><span class="lang-zh">AI電影製作資源池代幣</span></div>
+                        <div class="text-xs text-gray-400"><span class="lang-en">Production Resource Token</span><span class="lang-zh">製作資源代幣</span></div>
                     </div>
                 </div>
                 <div class="text-xs text-gray-600">
-                    <span class="lang-en">Standardized tokens for core digital resources needed for AI film production</span>
-                    <span class="lang-zh">AI電影製作所需核心數字資源的標準化代幣</span>
+                    <span class="lang-en">Standardized tokens for core digital resources needed for AI film production.</span>
+                    <span class="lang-zh">AI電影製作所需核心數字資源的標準化代幣。</span>
                 </div>
             </div>
 
@@ -937,12 +773,12 @@
                     <span class="w-8 h-8 bg-pink-500 rounded-full flex items-center justify-center text-sm font-bold mr-3">7</span>
                     <div>
                         <div class="font-bold text-sm">DRC-NFT</div>
-                        <div class="text-xs text-gray-400"><span class="lang-en">Film Distribution Rights Contract NFT</span><span class="lang-zh">影視發行權合約NFT</span></div>
+                        <div class="text-xs text-gray-400"><span class="lang-en">Distribution Rights Contract</span><span class="lang-zh">影視發行權合約</span></div>
                     </div>
                 </div>
                 <div class="text-xs text-gray-600">
-                    <span class="lang-en">Standardized smart contract NFT for regional distribution rights</span>
-                    <span class="lang-zh">影視作品區域發行權的標準化智能合約NFT</span>
+                    <span class="lang-en">Smart contract NFT for regional film distribution rights.</span>
+                    <span class="lang-zh">影視作品區域發行權的標準化智能合約NFT。</span>
                 </div>
             </div>
 
@@ -951,27 +787,26 @@
                     <span class="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center text-sm font-bold mr-3">8</span>
                     <div>
                         <div class="font-bold text-sm">RPL-NFT</div>
-                        <div class="text-xs text-gray-400"><span class="lang-en">Academy Regional Cooperation License</span><span class="lang-zh">學院區域合作許可證</span></div>
+                        <div class="text-xs text-gray-400"><span class="lang-en">Academy Cooperation License</span><span class="lang-zh">學院合作許可證</span></div>
                     </div>
                 </div>
                 <div class="text-xs text-gray-600">
-                    <span class="lang-en">Tokenization of HKAIFA franchise rights in specific regions</span>
-                    <span class="lang-zh">HKAIFA在特定地區的特許經營權代幣化</span>
+                    <span class="lang-en">License for HKAIFA franchise rights in specific regions.</span>
+                    <span class="lang-zh">HKAIFA在特定地區的特許合作權益許可。</span>
                 </div>
             </div>
 
-            <!-- Projects 9-16 -->
             <div class="p-4 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-all">
                 <div class="flex items-center mb-3">
                     <span class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center text-sm font-bold mr-3">9</span>
                     <div>
                         <div class="font-bold text-sm">BPW-Deed</div>
-                        <div class="text-xs text-gray-400"><span class="lang-en">Brand Parallel World Deed</span><span class="lang-zh">品牌平行世界地契</span></div>
+                        <div class="text-xs text-gray-400"><span class="lang-en">Parallel World Deed</span><span class="lang-zh">平行世界地契</span></div>
                     </div>
                 </div>
                 <div class="text-xs text-gray-600">
-                    <span class="lang-en">Ownership and operation rights of brand-customized parallel worlds</span>
-                    <span class="lang-zh">404.world中品牌定制平行世界的所有權和運營權</span>
+                    <span class="lang-en">Ownership and operation rights of brand-customized parallel worlds.</span>
+                    <span class="lang-zh">404.world中品牌定制平行世界的所有權和運營權。</span>
                 </div>
             </div>
 
@@ -980,12 +815,12 @@
                     <span class="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center text-sm font-bold mr-3">10</span>
                     <div>
                         <div class="font-bold text-sm">UGA-EW</div>
-                        <div class="text-xs text-gray-400"><span class="lang-en">Unicorn Gold Award Expectation Warrant</span><span class="lang-zh">獨角獸金獎期望權證</span></div>
+                        <div class="text-xs text-gray-400"><span class="lang-en">Award Prediction Certificate</span><span class="lang-zh">金獎預測權證</span></div>
                     </div>
                 </div>
                 <div class="text-xs text-gray-600">
-                    <span class="lang-en">Tokenized prediction market for HKAIIFF highest award winning expectations</span>
-                    <span class="lang-zh">HKAIIFF最高獎項獲獎預期的代幣化預測市場</span>
+                    <span class="lang-en">Prediction market for HKAIIFF award outcomes.</span>
+                    <span class="lang-zh">HKAIIFF最高獎項獲獎預期的預測權益。</span>
                 </div>
             </div>
 
@@ -994,12 +829,12 @@
                     <span class="w-8 h-8 bg-lime-500 rounded-full flex items-center justify-center text-sm font-bold mr-3">11</span>
                     <div>
                         <div class="font-bold text-sm">AIT-IPL</div>
-                        <div class="text-xs text-gray-400"><span class="lang-en">AI Tool Intellectual Property License RWA</span><span class="lang-zh">AI工具知識產權許可RWA</span></div>
+                        <div class="text-xs text-gray-400"><span class="lang-en">AI Tool IP License</span><span class="lang-zh">AI工具IP許可</span></div>
                     </div>
                 </div>
                 <div class="text-xs text-gray-600">
-                    <span class="lang-en">Tokenization of intellectual property for proprietary AI creation tools</span>
-                    <span class="lang-zh">生態內專有AI創作工具的知識產權代幣化</span>
+                    <span class="lang-en">Intellectual property licensing for proprietary AI creation tools.</span>
+                    <span class="lang-zh">生態內專有AI創作工具的知識產權許可。</span>
                 </div>
             </div>
 
@@ -1008,12 +843,12 @@
                     <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-sm font-bold mr-3">12</span>
                     <div>
                         <div class="font-bold text-sm">UC-FRC</div>
-                        <div class="text-xs text-gray-400"><span class="lang-en">UCard Future Revenue Rights Contract</span><span class="lang-zh">UCard未來收益權合約</span></div>
+                        <div class="text-xs text-gray-400"><span class="lang-en">UCard Service Rights</span><span class="lang-zh">UCard服務權益</span></div>
                     </div>
                 </div>
                 <div class="text-xs text-gray-600">
-                    <span class="lang-en">Securitization of future operating revenue from AIF UCard business</span>
-                    <span class="lang-zh">AIF UCard業務未來運營收入的證券化</span>
+                    <span class="lang-en">Rights to future operating revenue from AIF UCard business.</span>
+                    <span class="lang-zh">AIF UCard業務未來運營收入的權益合約。</span>
                 </div>
             </div>
 
@@ -1022,12 +857,12 @@
                     <span class="w-8 h-8 bg-violet-500 rounded-full flex items-center justify-center text-sm font-bold mr-3">13</span>
                     <div>
                         <div class="font-bold text-sm">AGW-Portfolio</div>
-                        <div class="text-xs text-gray-400"><span class="lang-en">HKAIIFF Award-winning Film Portfolio Asset Package</span><span class="lang-zh">HKAIIFF獲獎影片組合資產包</span></div>
+                        <div class="text-xs text-gray-400"><span class="lang-en">Winning Film Portfolio</span><span class="lang-zh">獲獎影片資產包</span></div>
                     </div>
                 </div>
                 <div class="text-xs text-gray-600">
-                    <span class="lang-en">Packaging of future three-year global net revenue rights for core award-winning films</span>
-                    <span class="lang-zh">每年核心獲獎影片的未來三年全球淨收益權打包</span>
+                    <span class="lang-en">Asset package of global net revenue rights for award-winning films.</span>
+                    <span class="lang-zh">核心獲獎影片的全球淨收益權益打包。</span>
                 </div>
             </div>
 
@@ -1036,12 +871,12 @@
                     <span class="w-8 h-8 bg-rose-500 rounded-full flex items-center justify-center text-sm font-bold mr-3">14</span>
                     <div>
                         <div class="font-bold text-sm">DSC-NFT</div>
-                        <div class="text-xs text-gray-400"><span class="lang-en">Digital Star Service Contract NFT</span><span class="lang-zh">數字明星服務合約NFT</span></div>
+                        <div class="text-xs text-gray-400"><span class="lang-en">Digital Star Service Contract</span><span class="lang-zh">數字明星服務合約</span></div>
                     </div>
                 </div>
                 <div class="text-xs text-gray-600">
-                    <span class="lang-en">Standardized service contract for StarOS star digital human future working hours</span>
-                    <span class="lang-zh">StarOS明星數字人未來工作時間的標準化服務合約</span>
+                    <span class="lang-en">Standardized service contract for digital human working hours.</span>
+                    <span class="lang-zh">StarOS明星數字人未來工作時間的服務合約。</span>
                 </div>
             </div>
 
@@ -1050,12 +885,12 @@
                     <span class="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center text-sm font-bold mr-3">15</span>
                     <div>
                         <div class="font-bold text-sm">FCS-Voucher</div>
-                        <div class="text-xs text-gray-400"><span class="lang-en">Full-Chain Service Package Voucher</span><span class="lang-zh">全鏈條服務打包憑證</span></div>
+                        <div class="text-xs text-gray-400"><span class="lang-en">Full Service Voucher</span><span class="lang-zh">全鏈條服務憑證</span></div>
                     </div>
                 </div>
                 <div class="text-xs text-gray-600">
-                    <span class="lang-en">Prepaid voucher for full-chain services from collection to distribution by AIF.Center</span>
-                    <span class="lang-zh">AIF.Center從征集到發行的全鏈條服務預付費憑證</span>
+                    <span class="lang-en">Prepaid voucher for full-chain film services by AIF.Center.</span>
+                    <span class="lang-zh">AIF.Center從征集到發行的全鏈條服務預付費憑證。</span>
                 </div>
             </div>
 
@@ -1064,27 +899,26 @@
                     <span class="w-8 h-8 bg-slate-500 rounded-full flex items-center justify-center text-sm font-bold mr-3">16</span>
                     <div>
                         <div class="font-bold text-sm">GBL-NFT</div>
-                        <div class="text-xs text-gray-400"><span class="lang-en">Genesis AI Life Form Time-sharing Lease Rights</span><span class="lang-zh">創世AI生命體分時租賃權</span></div>
+                        <div class="text-xs text-gray-400"><span class="lang-en">Genesis AI Life Lease</span><span class="lang-zh">創世AI生命租賃權</span></div>
                     </div>
                 </div>
                 <div class="text-xs text-gray-600">
-                    <span class="lang-en">Time-sharing lease of usage rights for BeingOS genesis-level AI digital life</span>
-                    <span class="lang-zh">BeingOS創世級AI數字生命的使用權分時租賃</span>
+                    <span class="lang-en">Time-sharing lease of usage rights for BeingOS genesis AI digital life.</span>
+                    <span class="lang-zh">BeingOS創世級AI數字生命的使用權分時租賃。</span>
                 </div>
             </div>
 
-            <!-- Projects 17-24 -->
             <div class="p-4 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-all">
                 <div class="flex items-center mb-3">
                     <span class="w-8 h-8 bg-sky-500 rounded-full flex items-center justify-center text-sm font-bold mr-3">17</span>
                     <div>
                         <div class="font-bold text-sm">CC-IPT</div>
-                        <div class="text-xs text-gray-400"><span class="lang-en">Certified Course IP Token</span><span class="lang-zh">認證課程IP代幣</span></div>
+                        <div class="text-xs text-gray-400"><span class="lang-en">Course IP Token</span><span class="lang-zh">課程IP權益</span></div>
                     </div>
                 </div>
                 <div class="text-xs text-gray-600">
-                    <span class="lang-en">Tokenization of intellectual property and licensing revenue for HKAIFA ace certification courses</span>
-                    <span class="lang-zh">HKAIFA王牌認證課程的知識產權和授權收入代幣化</span>
+                    <span class="lang-en">Intellectual property rights for HKAIFA certification courses.</span>
+                    <span class="lang-zh">HKAIFA認證課程的知識產權和授權權益。</span>
                 </div>
             </div>
 
@@ -1093,12 +927,12 @@
                     <span class="w-8 h-8 bg-fuchsia-500 rounded-full flex items-center justify-center text-sm font-bold mr-3">18</span>
                     <div>
                         <div class="font-bold text-sm">GPN-License</div>
-                        <div class="text-xs text-gray-400"><span class="lang-en">Global Payment Network Node Rights</span><span class="lang-zh">全球支付網絡節點權</span></div>
+                        <div class="text-xs text-gray-400"><span class="lang-en">Payment Node Rights</span><span class="lang-zh">支付網絡節點權</span></div>
                     </div>
                 </div>
                 <div class="text-xs text-gray-600">
-                    <span class="lang-en">Payment clearing network operation node rights for AIFCARD in specific countries</span>
-                    <span class="lang-zh">AIFCARD在特定國家或地區的支付清算網絡運營節點權</span>
+                    <span class="lang-en">Operation node rights for AIFCARD in specific regions.</span>
+                    <span class="lang-zh">AIFCARD在特定國家或地區的運營節點權。</span>
                 </div>
             </div>
 
@@ -1107,12 +941,12 @@
                     <span class="w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">19</span>
                     <div>
                         <div class="font-bold text-sm">CDS-RWA</div>
-                        <div class="text-xs text-gray-400"><span class="lang-en">Project Financing Default Credit Swap</span><span class="lang-zh">項目融資違約信用互換</span></div>
+                        <div class="text-xs text-gray-400"><span class="lang-en">Risk Management Tool</span><span class="lang-zh">項目風險管理工具</span></div>
                     </div>
                 </div>
                 <div class="text-xs text-gray-600">
-                    <span class="lang-en">Decentralized credit default swap market for film projects on AIF.Market</span>
-                    <span class="lang-zh">為AIF.Market上電影項目創建的去中心化信用違約互換市場</span>
+                    <span class="lang-en">Decentralized risk management tools for film projects.</span>
+                    <span class="lang-zh">為AIF.Market上電影項目提供的風險管理互換工具。</span>
                 </div>
             </div>
 
@@ -1121,12 +955,12 @@
                     <span class="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">20</span>
                     <div>
                         <div class="font-bold text-sm">GSN-Node</div>
-                        <div class="text-xs text-gray-400"><span class="lang-en">Global Film Submission Network Node Operation Rights</span><span class="lang-zh">全球征片網絡節點經營權</span></div>
+                        <div class="text-xs text-gray-400"><span class="lang-en">Submission Network Node</span><span class="lang-zh">征片網絡節點</span></div>
                     </div>
                 </div>
                 <div class="text-xs text-gray-600">
-                    <span class="lang-en">Local film submission node operation rights for AIF.Center in key global cities</span>
-                    <span class="lang-zh">AIF.Center在全球重點城市的地方征片節點經營權</span>
+                    <span class="lang-en">Local film submission node operation rights in key global cities.</span>
+                    <span class="lang-zh">AIF.Center在全球重點城市的地方征片節點經營權。</span>
                 </div>
             </div>
 
@@ -1135,12 +969,12 @@
                     <span class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">21</span>
                     <div>
                         <div class="font-bold text-sm">STM-NFT</div>
-                        <div class="text-xs text-gray-400"><span class="lang-en">AI Skill Module Trading Market NFT</span><span class="lang-zh">AI技能模塊交易市場NFT</span></div>
+                        <div class="text-xs text-gray-400"><span class="lang-en">AI Skill Module</span><span class="lang-zh">AI技能模塊NFT</span></div>
                     </div>
                 </div>
                 <div class="text-xs text-gray-600">
-                    <span class="lang-en">Skills learned by AI Being modularized as independent NFT assets for trading</span>
-                    <span class="lang-zh">AI Being學習獲得的技能模塊化為獨立NFT資產交易</span>
+                    <span class="lang-en">Skills learned by AI Being modularized as independent NFT assets.</span>
+                    <span class="lang-zh">AI Being學習獲得的技能模塊化為獨立NFT資產。</span>
                 </div>
             </div>
 
@@ -1149,12 +983,12 @@
                     <span class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">22</span>
                     <div>
                         <div class="font-bold text-sm">VVR-License</div>
-                        <div class="text-xs text-gray-400"><span class="lang-en">Virtual Venue Rental Rights</span><span class="lang-zh">虛擬演出場地租賃權</span></div>
+                        <div class="text-xs text-gray-400"><span class="lang-en">Virtual Venue Rental</span><span class="lang-zh">虛擬場地租賃權</span></div>
                     </div>
                 </div>
                 <div class="text-xs text-gray-600">
-                    <span class="lang-en">Tokenization of rental rights for iconic virtual performance venues in 404.world</span>
-                    <span class="lang-zh">404.world中標誌性虛擬演出場地的租賃權代幣化</span>
+                    <span class="lang-en">Rental rights for iconic virtual performance venues in 404.world.</span>
+                    <span class="lang-zh">404.world中標誌性虛擬演出場地的租賃權。</span>
                 </div>
             </div>
 
@@ -1162,13 +996,13 @@
                 <div class="flex items-center mb-3">
                     <span class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">23</span>
                     <div>
-                        <div class="font-bold text-sm">ADF-Fund</div>
-                        <div class="text-xs text-gray-400"><span class="lang-en">AI Director Creation Copyright Fund</span><span class="lang-zh">AI導演創作版權基金</span></div>
+                        <div class="font-bold text-sm">ADF-Collection</div>
+                        <div class="text-xs text-gray-400"><span class="lang-en">AI Director Copyrights</span><span class="lang-zh">AI導演版權集合</span></div>
                     </div>
                 </div>
                 <div class="text-xs text-gray-600">
-                    <span class="lang-en">Centralized management and diversified investment portfolio for multiple AI director creation copyrights</span>
-                    <span class="lang-zh">多位AI導演創作版權的集中管理和多元化投資組合</span>
+                    <span class="lang-en">Management portfolio for multiple AI director creation copyrights.</span>
+                    <span class="lang-zh">多位AI導演創作版權的集中管理組合。</span>
                 </div>
             </div>
 
@@ -1177,27 +1011,26 @@
                     <span class="w-8 h-8 bg-yellow-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">24</span>
                     <div>
                         <div class="font-bold text-sm">GFF-Pass</div>
-                        <div class="text-xs text-gray-400"><span class="lang-en">Global Film Festival Alliance Pass</span><span class="lang-zh">全球電影節聯盟通行證</span></div>
+                        <div class="text-xs text-gray-400"><span class="lang-en">Film Festival Alliance Pass</span><span class="lang-zh">電影節聯盟通行證</span></div>
                     </div>
                 </div>
                 <div class="text-xs text-gray-600">
-                    <span class="lang-en">Multi-festival use pass NFT in cooperation with major global film festivals</span>
-                    <span class="lang-zh">與全球主要電影節合作的多電影節使用通行證NFT</span>
+                    <span class="lang-en">Multi-festival use pass NFT for major global film festivals.</span>
+                    <span class="lang-zh">與全球主要電影節合作的多電影節使用通行證NFT。</span>
                 </div>
             </div>
 
-            <!-- Projects 25-26 -->
             <div class="p-4 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-all">
                 <div class="flex items-center mb-3">
                     <span class="w-8 h-8 bg-indigo-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">25</span>
                     <div>
-                        <div class="font-bold text-sm">CSC-Token</div>
-                        <div class="text-xs text-gray-400"><span class="lang-en">Creator Skill Certification Credit Token</span><span class="lang-zh">創作者技能認證學分代幣</span></div>
+                        <div class="font-bold text-sm">CSC-Credits</div>
+                        <div class="text-xs text-gray-400"><span class="lang-en">Skill Certification Credits</span><span class="lang-zh">技能認證學分</span></div>
                     </div>
                 </div>
                 <div class="text-xs text-gray-600">
-                    <span class="lang-en">HKAIFA skill certification converted into transferable, cumulative, exchangeable credit system</span>
-                    <span class="lang-zh">HKAIFA技能認證轉化為可流轉累積兌換的學分體系</span>
+                    <span class="lang-en">HKAIFA skill certification converted into transferable credit system.</span>
+                    <span class="lang-zh">HKAIFA技能認證轉化為可流轉累積的學分體系。</span>
                 </div>
             </div>
 
@@ -1205,13 +1038,13 @@
                 <div class="flex items-center mb-3">
                     <span class="w-8 h-8 bg-pink-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">26</span>
                     <div>
-                        <div class="font-bold text-sm">VAM-Token</div>
-                        <div class="text-xs text-gray-400"><span class="lang-en">Virtual Asset Management Service Token</span><span class="lang-zh">虛擬資產管理服務代幣</span></div>
+                        <div class="font-bold text-sm">VAM-Service</div>
+                        <div class="text-xs text-gray-400"><span class="lang-en">Asset Management Service</span><span class="lang-zh">資產管理服務憑證</span></div>
                     </div>
                 </div>
                 <div class="text-xs text-gray-600">
-                    <span class="lang-en">Prepaid token providing professional management services for virtual assets in the ecosystem</span>
-                    <span class="lang-zh">為生態內虛擬資產提供專業管理服務的預付費代幣</span>
+                    <span class="lang-en">Prepaid token for professional management services.</span>
+                    <span class="lang-zh">為生態內數字資產提供專業管理服務的預付費憑證。</span>
                 </div>
             </div>
         </div>
@@ -1236,29 +1069,25 @@
                     <div class="p-6 bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-all">
                         <h4 class="font-bold mb-2"><span class="lang-en">AI Technology Partners</span><span class="lang-zh">AI技術合作夥伴</span></h4>
                         <p class="text-sm text-gray-600">
-                            <span class="lang-en">OpenAI, Anthropic, Midjourney, NVIDIA, Google AI, Microsoft AI, and more.</span>
-                            <span class="lang-zh">OpenAI, Anthropic, Midjourney, NVIDIA, Google AI, Microsoft AI等。</span>
+                            OpenAI, Anthropic, Midjourney, NVIDIA, Google AI, Microsoft AI.
                         </p>
                     </div>
                     <div class="p-6 bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-all">
-                        <h4 class="font-bold mb-2"><span class="lang-en">Blockchain Technology Partners</span><span class="lang-zh">區塊鏈技術夥伴</span></h4>
+                        <h4 class="font-bold mb-2"><span class="lang-en">Blockchain Partners</span><span class="lang-zh">區塊鏈技術夥伴</span></h4>
                         <p class="text-sm text-gray-600">
-                            <span class="lang-en">Ethereum, Polygon, Solana, Binance Smart Chain, Avalanche, and more.</span>
-                            <span class="lang-zh">Ethereum, Polygon, Solana, Binance Smart Chain, Avalanche等。</span>
+                            Ethereum, Polygon, Solana, Binance Smart Chain, Avalanche.
                         </p>
                     </div>
                     <div class="p-6 bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-all">
-                        <h4 class="font-bold mb-2"><span class="lang-en">Supported Digital Currencies</span><span class="lang-zh">支持的數字貨幣</span></h4>
+                        <h4 class="font-bold mb-2"><span class="lang-en">Supported Assets</span><span class="lang-zh">支持資產</span></h4>
                         <p class="text-sm text-gray-600">
-                            <span class="lang-en">Bitcoin, Ethereum, USDT, USDC, BNB, and more.</span>
-                            <span class="lang-zh">比特幣、以太坊、USDT、USDC、BNB等。</span>
+                            Bitcoin, Ethereum, USDT, USDC, BNB.
                         </p>
                     </div>
                     <div class="p-6 bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-all">
-                        <h4 class="font-bold mb-2"><span class="lang-en">Media & Content Partners</span><span class="lang-zh">媒體與內容合作夥伴</span></h4>
+                        <h4 class="font-bold mb-2"><span class="lang-en">Media Partners</span><span class="lang-zh">媒體與內容夥伴</span></h4>
                         <p class="text-sm text-gray-600">
-                            <span class="lang-en">Warner Bros, Disney, Netflix, Amazon Studios, and more.</span>
-                            <span class="lang-zh">華納兄弟、迪士尼、Netflix、亞馬遜工作室等。</span>
+                            Warner Bros, Disney, Netflix, Amazon Studios.
                         </p>
                     </div>
                 </div>
@@ -1266,21 +1095,20 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="py-24 px-6 md:px-8 max-w-[1920px] mx-auto border-t border-gray-200">
         <div class="max-w-3xl mx-auto text-center reveal-text">
             <h2 class="text-4xl font-bold mb-6">
-                <span class="lang-en">Start Your AI Creative Investment Journey Now</span>
-                <span class="lang-zh">立即開始您的AI創意投資之旅</span>
+                <span class="lang-en">Start Your AI Creative Journey Now</span>
+                <span class="lang-zh">立即開始您的AI創意之旅</span>
             </h2>
             <p class="text-xl text-gray-500 mb-8">
-                <span class="lang-en">Join millions of investors in building the grand vision of creative value economy in the AI era, and earn substantial returns from the growth of the creative economy.</span>
-                <span class="lang-zh">加入千萬投資者，參與構建AI時代創意價值經濟的宏偉藍圖，在創意經濟的增長中獲得豐厚回報。</span>
+                <span class="lang-en">Join millions in building the grand vision of creative value economy in the AI era.</span>
+                <span class="lang-zh">加入百萬用戶，共同參與構建AI時代創意價值經濟的宏偉藍圖。</span>
             </p>
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
                 <a href="#" class="bg-black text-white px-8 py-4 rounded-full font-bold academy-btn text-center inline-flex items-center justify-center">
-                    <span class="lang-en">Get AIF Token</span>
-                    <span class="lang-zh">獲取AIF代幣</span>
+                    <span class="lang-en">Access AIF</span>
+                    <span class="lang-zh">獲取AIF</span>
                 </a>
                 <a href="#" class="border border-black text-black px-8 py-4 rounded-full font-bold text-center inline-flex items-center justify-center hover:bg-black hover:text-white transition-all">
                     <span class="lang-en">Download Whitepaper</span>
@@ -1290,14 +1118,13 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-black text-white pt-24 pb-8 px-6 md:px-8">
         <div class="max-w-[1920px] mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 border-t border-white/20 pt-12">
                 <div class="col-span-1 md:col-span-2">
                     <a href="#" class="text-2xl font-bold block mb-4">HKAIFM.</a>
                     <p class="text-gray-400 text-sm max-w-xs leading-relaxed">
-                        <span class="lang-en">Building global infrastructure for creative value economy in the AI era, allowing every creative work to find its true value.</span>
+                        <span class="lang-en">Building global infrastructure for creative value economy in the AI era.</span>
                         <span class="lang-zh">構建AI時代創意價值經濟的全球基礎設施，讓每一份創意都能找到其真實價值。</span>
                     </p>
                 </div>
@@ -1306,10 +1133,10 @@
                     <h4 class="text-xs font-bold uppercase tracking-wider mb-4 text-gray-500">Ecosystem Platforms</h4>
                     <ul class="space-y-3 text-sm font-medium text-gray-300">
                         <li><a href="https://www.hkaifa.academy/#/home" class="hover:text-white"><span class="lang-en">HKAIFA - AI Film Academy</span><span class="lang-zh">HKAIFA - AI電影學院</span></a></li>
-                        <li><a href="http://www.hkaiiff.org" class="hover:text-white"><span class="lang-en">HKAIIFF - AI International Film Festival</span><span class="lang-zh">HKAIIFF - AI國際電影節</span></a></li>
+                        <li><a href="http://www.hkaiiff.org" class="hover:text-white"><span class="lang-en">HKAIIFF - AI Film Festival</span><span class="lang-zh">HKAIIFF - AI國際電影節</span></a></li>
                         <li><a href="#" class="hover:text-white"><span class="lang-en">AIF.Market - Asset Market</span><span class="lang-zh">AIF.Market - 資產市場</span></a></li>
-                        <li><a href="http://www.aif.exchange" class="hover:text-white"><span class="lang-en">AIF.Exchange - Asset Exchange</span><span class="lang-zh">AIF.Exchange - 資產交易所</span></a></li>
-                        <li><a href="https://www.aif.center" class="hover:text-white"><span class="lang-en">AIF.Center - Service Center</span><span class="lang-zh">AIF.Center - 服務中心</span></a></li>
+                        <li><a href="http://www.aif.exchange" class="hover:text-white"><span class="lang-en">AIF.Exchange - Exchange</span><span class="lang-zh">AIF.Exchange - 資產交易</span></a></li>
+                        <li><a href="https://www.aif.center" class="hover:text-white"><span class="lang-en">AIF.Center - Service</span><span class="lang-zh">AIF.Center - 服務中心</span></a></li>
                         <li><a href="http://www.404.world" class="hover:text-white"><span class="lang-en">404.world - Parallel World</span><span class="lang-zh">404.world - 平行世界</span></a></li>
                     </ul>
                 </div>
@@ -1318,10 +1145,10 @@
                     <h4 class="text-xs font-bold uppercase tracking-wider mb-4 text-gray-500">Resources</h4>
                     <ul class="space-y-3 text-sm font-medium text-gray-300">
                         <li><a href="#" class="hover:text-white"><span class="lang-en">Whitepaper</span><span class="lang-zh">白皮書</span></a></li>
-                        <li><a href="#" class="hover:text-white"><span class="lang-en">Technical Documentation</span><span class="lang-zh">技術文檔</span></a></li>
-                        <li><a href="#" class="hover:text-white"><span class="lang-en">Tokenomics</span><span class="lang-zh">代幣經濟學</span></a></li>
-                        <li><a href="#" class="hover:text-white"><span class="lang-en">Developer Resources</span><span class="lang-zh">開發者資源</span></a></li>
-                        <li><a href="#" class="hover:text-white"><span class="lang-en">Customer Support</span><span class="lang-zh">客戶支持</span></a></li>
+                        <li><a href="#" class="hover:text-white"><span class="lang-en">Technical Docs</span><span class="lang-zh">技術文檔</span></a></li>
+                        <li><a href="#" class="hover:text-white"><span class="lang-en">Tokenomics</span><span class="lang-zh">通證經濟</span></a></li>
+                        <li><a href="#" class="hover:text-white"><span class="lang-en">Risk Disclosure</span><span class="lang-zh">風險披露</span></a></li>
+                        <li><a href="#" class="hover:text-white"><span class="lang-en">Contact Support</span><span class="lang-zh">客戶支持</span></a></li>
                         <li><a href="mailto:info@hkaiiff.org" class="hover:text-white">info@hkaiiff.org</a></li>
                     </ul>
                 </div>
@@ -1370,7 +1197,7 @@
             });
         });
 
-        // --- Compliance Modal Logic (Added from token2.html) ---
+        // --- Compliance Modal Logic ---
         const complianceChecks = document.querySelectorAll('.compliance-check');
         const complianceBtn = document.getElementById('complianceBtn');
         const complianceModal = document.getElementById('complianceModal');
